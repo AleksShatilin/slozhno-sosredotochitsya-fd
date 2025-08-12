@@ -47,7 +47,8 @@
     <span class="rec">REC</span>
 
     <p class="header-text">Что делать, когда не можешь делать ничего
-      Или&nbsp;почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+      <br>Или&nbsp;почему нам так сложно сконцентрироваться, особенно когда очень надо
+    </p>
 
   </header>
   <main>
@@ -211,43 +212,55 @@
       <h2 class="section-picture-title">А можно в картинках?</h2>
 
 
+
       <article class="section-gallery">
-        <!-- Изображение 1 -->
-        <picture>
-          <source src="./images/sunset.avif" type="image/avif">
-          <source src="./images/sunset.webp" type="image/webp">
-          <img class="img1" src="./images/sunset.png" alt="Красивый пейзаж с горами" loading="lazy">
-        </picture>
+        <!-- Изображение 1 (занимает 2 колонки) -->
+        <div class="img1">
+          <picture>
+            <source src="./images/sunset.avif" type="image/avif">
+            <source src="./images/sunset.webp" type="image/webp">
+            <img src="./images/sunset.png" alt="Красивый пейзаж с горами" loading="lazy">
+          </picture>
+        </div>
 
-        <!-- Изображение 2 -->
-        <picture>
-          <source src="./images/ice-cream.avif" type="image/avif">
-          <source src="./images/ice-cream.webp" type="image/webp">
-          <img class="img2" src="./images/ice-cream.png" alt="Улыбающая миска с шариками улыбающевогося мороженного"
-            loading="lazy">
-        </picture>
+        <!-- Изображение 2 (занимает 1 колонку и 2 строки) -->
+        <div class="img2">
+          <picture>
+            <source src="./images/ice-cream.avif" type="image/avif">
+            <source src="./images/ice-cream.webp" type="image/webp">
+            <img src="./images/ice-cream.png" alt="Улыбающаяся миска с шариками мороженого" loading="lazy">
+          </picture>
+        </div>
 
-        <!-- Изображение 3 -->
-        <picture>
-          <source src="./images/tape.avif" type="image/avif">
-          <source src="./images/tape.webp" type="image/webp">
-          <img class="img3" src="./images/tape.png" alt="Музыкалья касета" loading="lazy">
-        </picture>
+        <!-- Изображение 3 (занимает 1 колонку и 2 строки) -->
+        <div class="img3">
+          <picture>
+            <source src="./images/tape.avif" type="image/avif">
+            <source src="./images/tape.webp" type="image/webp">
+            <img src="./images/tape.png" alt="Музыкальная кассета" loading="lazy">
+          </picture>
+        </div>
 
-        <!-- Изображение 4 -->
-        <picture>
-          <source src="./images/street.avif" type="image/avif">
-          <source src="./images/street.webp" type="image/webp">
-          <img class="img4" src="./images/street.png" alt="Городская улица упирающаяся в стену" loading="lazy">
-        </picture>
+        <!-- Изображение 4 (занимает 2 колонки) -->
+        <div class="img4">
+          <picture>
+            <source src="./images/street.avif" type="image/avif">
+            <source src="./images/street.webp" type="image/webp">
+            <img src="./images/street.png" alt="Городская улица упирающаяся в стену" loading="lazy">
+          </picture>
+        </div>
 
-        <!-- Изображение 5 -->
-        <picture>
-          <source src="./images/books.avif" type="/image/avif">
-          <source src="./images/books.webp" type="image/webp">
-          <img class="img5" src="./images/books.png" alt="Большая стопка кник, а сверху кофе" loading="lazy">
-        </picture>
+        <!-- Изображение 5 (центральное) -->
+        <div class="img5">
+          <picture>
+            <source src="./images/books.avif" type="image/avif">
+            <source src="./images/books.webp" type="image/webp">
+            <img src="./images/books.png" alt="Большая стопка книг, а сверху кофе" loading="lazy">
+          </picture>
+        </div>
       </article>
+
+
 
 
     </Section>

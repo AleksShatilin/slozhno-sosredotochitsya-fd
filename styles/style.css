@@ -145,44 +145,81 @@
   }
 }
 
-.theme-dark .header__theme-menu-button {
-  color: var(--title-bg);
-
-}
-
-.theme-auto .header__theme-menu-button {
-  color: var(--accent-color);
-
-}
 
 
-/* Стили для кнопок меню */
+
+
+
+/* Базовые стили кнопок */
 .header__theme-menu-button {
   text-transform: lowercase;
   font-size: 17px;
   text-align: center;
   cursor: pointer;
   color: var(--bg-color);
+  /* Основной цвет текста */
   border: 1px solid transparent;
   padding: 0 13px 2px;
   background: transparent;
+  transition: all 0.3s ease;
 }
 
+/* Темная тема (Неон) */
+.theme-dark .header__theme-menu-button {
+  color: var(--title-bg);
+  /* Розовый текст */
+}
 
+/* Авто-режим */
+.theme-auto .header__theme-menu-button {
+  color: var(--accent-color);
+  /* Розовый в темной теме */
+}
 
+/* Светлая тема (День) */
+.theme-light .header__theme-menu-button {
+  color: var(--bg-color);
+  /* Темно-серый текст (#353430) */
+}
+
+/* Состояния кнопок (активная, ховер, фокус) */
 .header__theme-menu-button_active {
   border: 1px solid var(--text-t);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-
   border: 0.5px solid var(--text-t);
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--text-t);
   outline: none;
+  border-bottom: 1px solid var(--text-t);
 }
+
+/* Особые стили для светлой темы */
+.theme-light .header__theme-menu-button_active,
+.theme-light .header__theme-menu-button:hover,
+.theme-light .header__theme-menu-button:focus {
+  border-color: var(--bg-color);
+  /* Серые рамки (#353430) */
+}
+
+/* Авто-режим в светлой теме */
+@media (prefers-color-scheme: light) {
+  .theme-auto .header__theme-menu-button {
+    color: var(--bg-color);
+    /* Серый текст */
+  }
+
+  .theme-auto .header__theme-menu-button_active,
+  .theme-auto .header__theme-menu-button:hover,
+  .theme-auto .header__theme-menu-button:focus {
+    border-color: var(--bg-color);
+    /* Серые рамки */
+  }
+}
+
 
 
 
