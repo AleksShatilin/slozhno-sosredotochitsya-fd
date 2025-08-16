@@ -27,3 +27,9 @@
   --text-t: #FF0070;
 
 }
+
+/* Темная тема (Неон) */
+.theme-dark .header__theme-menu-button {
+  color: var(--title-bg);
+  /* Розовый текст */
+}

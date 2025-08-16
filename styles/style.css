@@ -6,7 +6,7 @@
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #000028;
+  background-color: var(--bg-color);
   background-image: var(--bg-image);
   font-family: 'IBM Plex Mono', Arial, sans-serif;
 }
@@ -16,10 +16,13 @@
 }
 
 .header {
-  max-width: 1024px;
+  height: 100vh;
+  min-height: 668px;
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Общие стили для всех уголков */
@@ -38,14 +41,14 @@
 .decorated-zone::before {
   top: 20px;
   right: 20px;
-  border-width: 2px 2px 0 0;
+  border-width: 1px 1px 0 0;
 }
 
 /* Нижний левый угол (для footer) */
 .decorated-zone::after {
   bottom: 20px;
   left: 20px;
-  border-width: 0 0 2px 2px;
+  border-width: 0 0 1px 1px;
 }
 
 .header__theme-menu-list {
@@ -71,22 +74,10 @@
   transition: all 0.3s ease;
 }
 
-/* Темная тема (Неон) */
-.theme-dark .header__theme-menu-button {
-  color: var(--title-bg);
-  /* Розовый текст */
-}
-
 /* Авто-режим */
 .theme-auto .header__theme-menu-button {
   color: var(--accent-color);
   /* Розовый в темной теме */
-}
-
-/* Светлая тема (День) */
-.theme-light .header__theme-menu-button {
-  color: var(--bg-color);
-  /* Темно-серый текст (#353430) */
 }
 
 /* Состояния кнопок (активная, ховер, фокус) */
@@ -110,21 +101,6 @@
 .theme-light .header__theme-menu-button:focus {
   border-color: var(--bg-color);
   /* Серые рамки (#353430) */
-}
-
-/* Авто-режим в светлой теме */
-@media (prefers-color-scheme: light) {
-  .theme-auto .header__theme-menu-button {
-    color: var(--bg-color);
-    /* Серый текст */
-  }
-
-  .theme-auto .header__theme-menu-button_active,
-  .theme-auto .header__theme-menu-button:hover,
-  .theme-auto .header__theme-menu-button:focus {
-    border-color: var(--bg-color);
-    /* Серые рамки */
-  }
 }
 
 .theme-auto {
@@ -207,13 +183,13 @@
 
 /* Начало 1 секции  */
 
-.section-one {
+.section-concentration-problems {
   max-width: 1024px;
   padding: 60px 0;
   background-color: transparent;
 }
 
-.section-content-one {
+.section-content-concentration-problems {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
@@ -222,20 +198,19 @@
 
 }
 
-.content-one {
+.content-concentration-problems {
   display: flex;
   flex-direction: column;
 }
 
-.content-title-one {
+.title-common{
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--accent-color);
-  margin: 0;
 }
 
-.content-heading-one {
+.content-heading-concentration-problems {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -246,16 +221,18 @@
 
 }
 
-.content-text-one {
-  color: var(--text-color);
+.content-text-concentration-problems {
   margin: 0 0 20px 0;
+}
+.text-common{
+  color: var(--text-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
 }
 
 .text-shadow {
-  text-shadow: 2.5px 2px var(--title-shadow);
+  text-shadow: 2px 2px 0 var(--title-shadow);
   text-decoration: none;
 }
 
@@ -272,24 +249,19 @@
 
 /* Начало 2 секции  */
 
-.section-two {
+.section-focus-disruptors {
   display: grid;
   gap: 20px;
   padding: 0px 20px 0;
 }
 
-.content-title-two {
-  color: var(--accent-color);
+.content-title-focus-disruptors {
   grid-column: 1;
   max-width: 315px;
-  height: 47px;
   margin: 0;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
 }
 
-.content-card-list-two {
+.content-card-list-focus-disruptors {
   grid-column: 1 / -1;
   /* Растягиваем на все колонки */
   display: grid;
@@ -299,40 +271,36 @@
   list-style: none;
 }
 
-.content-card-list-item-two {
+.content-card-list-item-focus-disruptors {
   box-sizing: border-box;
 }
 
-.card-list-two {
+.card-list-focus-disruptors {
   display: grid;
   gap: 10px;
 }
 
-.card-list-title-two {
+.card-list-title-focus-disruptors {
   color: var(--bg-color);
   background-color: var(--title-bg);
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
+
+  
 }
 
-.card-list-text-two {
-  color: var(--text-color);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23.4px;
-}
-
-.card-list-title-two,
-.card-list-text-two {
+.card-list-title-focus-disruptors,
+.card-list-text-focus-disruptors {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
+
 /* Начало 3 секции  */
 
-.section-three {
+.section-focus-tips {
   display: grid;
   grid-template-columns: 315px 1fr;
   color: #FFF1F7;
@@ -341,15 +309,11 @@
   padding: 80px 20px;
 }
 
-.title-three {
-  font-size: 18px;
-  line-height: 23.4px;
-  font-weight: 700;
-  color: var(--accent-color);
+.title-focus-tips {
   grid-column: 1;
 }
 
-.card-list-three {
+.card-list-focus-tips {
   padding: 0;
   margin: 0 auto;
   max-width: 649px;
@@ -358,7 +322,7 @@
   list-style: none;
 }
 
-.title-card-three {
+.title-card-focus-tips {
   color: var(--bg-color);
   background-color: var(--title-bg);
   font-weight: 700;
@@ -367,7 +331,7 @@
   margin-bottom: 20px;
 }
 
-.card-list-title-three {
+.card-list-title-focus-tips {
   color: var(--bg-color);
   background-color: var(--title-bg);
   font-weight: 400;
@@ -375,13 +339,6 @@
   line-height: 23.4px;
   margin-top: 20px;
   margin-bottom: 10px;
-}
-
-.card-list-text-three {
-  color: var(--text-color);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23.4px;
 }
 
 /* Начало секции с картинками  */
@@ -451,7 +408,8 @@
 /* ДоБро пожаловать в подвал*/
 
 .footer {
-  height: 768px;
+  min-height: 668px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -460,7 +418,7 @@
 
 .footer-title {
   color: var(--title-color);
-  text-shadow: 4px 4px var(--title-shadow);
+  text-shadow: 2px 2px 0 var(--title-shadow);
   font-weight: 700;
   font-size: 157px;
   line-height: 83%;
@@ -504,37 +462,36 @@
     flex-shrink: 0;
   }
 
-  .section-one {
+  .section-concentration-problems {
     max-width: 768px;
     padding: 60px 0;
   }
 
-  .section-content-one {
+  .section-content-concentration-problems {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding: 0 20px;
   }
 
-  .section-two {
+  .section-focus-disruptors {
     max-width: 768px;
   }
 
-  .content-title-two {
+  .content-title-focus-disruptors {
     max-width: 236px;
-    margin-bottom: 22px;
   }
 
-  .content-card-list-two {
+  .content-card-list-focus-disruptors {
     grid-template-columns: 1fr;
   }
 
-  .section-three {
+  .section-focus-tips {
     max-width: 768px;
     grid-template-columns: 1fr;
   }
 
-  .title-three {
+  .title-focus-tips {
     min-width: 236px
   }
 
@@ -578,9 +535,14 @@
     gap: 10px;
   }
 
-  .header.decorated-zone::after {
-    bottom: -58px;
+  .decorated-zone::after {
+    bottom: 10px;
     left: 10px;
+  }
+
+  .decorated-zone::before {
+    top: 10px;
+    right: 10px;
   }
 
   .rec {
@@ -598,31 +560,31 @@
     margin: 53px 10px 0;
   }
 
-  .section-one {
+  .section-concentration-problems {
     padding: 0;
   }
 
-  .section-content-one {
+  .section-content-concentration-problems {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 108px 10px 30px 10px;
+    padding: 40px 10px 30px 10px;
   }
 
-  .section-two {
+  .section-focus-disruptors {
     padding: 0 10px 0;
   }
 
-  .content-title-two {
+  .content-title-focus-disruptors {
     max-width: 355px;
     margin: 0;
   }
 
-  .content-card-list-two {
+  .content-card-list-focus-disruptors {
     padding: 0;
   }
 
-  .section-three {
+  .section-focus-tips {
     flex-direction: column;
     display: flex;
     padding: 49px 10px 50px 10px;
@@ -656,19 +618,10 @@
     order: 4;
   }
 
-  .decorated-zone::before {
-    top: 10px;
-    right: 10px;
-  }
-
-  .footer.decorated-zone::after {
-    bottom: 10px;
-    left: 10px;
-  }
-
   .footer {
     margin-top: 39px;
-    max-height: 667px;
+    min-height: 668px;
+    height: 100vh;
   }
 
   .footer-title {

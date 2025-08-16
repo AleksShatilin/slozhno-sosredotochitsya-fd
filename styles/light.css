@@ -2,13 +2,15 @@
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
-*/
 
-:root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
+  сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
-  */
+*/
+
+
+:root.theme-light {
+  
 
   --bg-image: url('../images/cover-image-light.png');
 
@@ -30,4 +32,23 @@
 
 .theme-light .rec {
   display: none;
+}
+
+/* Авто-режим в светлой теме */
+@media (prefers-color-scheme: light) {
+  .theme-auto .header__theme-menu-button {
+    color: var(--bg-color);
+    /* Серый текст */
+  }
+  .theme-auto .header__theme-menu-button_active,
+  .theme-auto .header__theme-menu-button:hover,
+  .theme-auto .header__theme-menu-button:focus {
+    border-color: var(--bg-color);
+  }
+}
+
+/* Светлая тема (День) */
+.theme-light .header__theme-menu-button {
+  color: var(--bg-color);
+  /* Темно-серый текст (#353430) */
 }
