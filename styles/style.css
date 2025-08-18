@@ -2,6 +2,7 @@
 /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 
 .page {
+
   max-width: 1024px;
   background-position: center center;
   background-size: cover;
@@ -66,7 +67,7 @@
   font-size: 17px;
   text-align: center;
   cursor: pointer;
-  color: var(--bg-color);
+  color: var(--text-t);
   /* Основной цвет текста */
   border: 1px solid transparent;
   padding: 0 13px 2px;
@@ -74,63 +75,18 @@
   transition: all 0.3s ease;
 }
 
-/* Авто-режим */
-.theme-auto .header__theme-menu-button {
-  color: var(--accent-color);
-  /* Розовый в темной теме */
-}
-
-/* Состояния кнопок (активная, ховер, фокус) */
 .header__theme-menu-button_active {
   border: 1px solid var(--text-t);
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  border: 0.5px solid var(--text-t);
+  border: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
   outline: none;
   border-bottom: 1px solid var(--text-t);
-}
-
-/* Особые стили для светлой темы */
-.theme-light .header__theme-menu-button_active,
-.theme-light .header__theme-menu-button:hover,
-.theme-light .header__theme-menu-button:focus {
-  border-color: var(--bg-color);
-  /* Серые рамки (#353430) */
-}
-
-.theme-auto {
-  /* Переменные по умолчанию (тёмная тема) */
-  --bg-image: url('../images/cover-image-dark.png');
-  --accent-color: #FF0070;
-  --title-color: #DB00FF;
-  --title-shadow: #FF0070;
-  --title-bg: #FF0070;
-  --bg-color: #000028;
-  --text-color: #F1B2CE;
-  --text-t: #FF0070;
-}
-
-@media (prefers-color-scheme: light) {
-  .theme-auto {
-    /* Переменные для светлой темы */
-    --bg-image: url('../images/cover-image-light.png');
-    --accent-color: #FF8DCB;
-    --title-color: #FFC2E6;
-    --title-shadow: #FF8DCB;
-    --title-bg: #FF8DCB;
-    --bg-color: #353430;
-    --text-color: #353430;
-    --text-t: #FF0070;
-  }
-
-  .theme-auto .rec {
-    display: none;
-  }
 }
 
 .header-title {
@@ -167,7 +123,7 @@
   height: 9px;
   background-color: #FF0070;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px #FF0070;
+  box-shadow: 0 0 4px 2px #FF0070;
 }
 
 .header-text {
@@ -175,56 +131,54 @@
   display: flex;
   justify-content: flex-end;
   max-width: 491px;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--bg-color);
-  background-color: var(--accent-color);
 }
 
 /* Начало 1 секции  */
 
-.section-concentration-problems {
+.section-problems {
   max-width: 1024px;
   padding: 60px 0;
   background-color: transparent;
 }
 
-.section-content-concentration-problems {
+.box-problems {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
   max-width: 1024px;
   padding: 0 20px 0;
-
 }
 
-.content-concentration-problems {
+.content-problems {
   display: flex;
   flex-direction: column;
 }
 
-.title-common{
+.title-common {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--accent-color);
 }
 
-.content-heading-concentration-problems {
+.content-heading {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.title-decor-text {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--bg-color);
   background-color: var(--title-bg);
-  display: inline-block;
-  margin-bottom: 10px;
-
 }
 
-.content-text-concentration-problems {
+.content-text {
   margin: 0 0 20px 0;
 }
-.text-common{
+
+.text-common {
   color: var(--text-color);
   font-weight: 400;
   font-size: 18px;
@@ -249,19 +203,19 @@
 
 /* Начало 2 секции  */
 
-.section-focus-disruptors {
+.section-focus {
   display: grid;
   gap: 20px;
-  padding: 0px 20px 0;
+  padding: 0 20px 0;
 }
 
-.content-title-focus-disruptors {
+.content-title-focus {
   grid-column: 1;
   max-width: 315px;
   margin: 0;
 }
 
-.content-card-list-focus-disruptors {
+.content-card-list-focus {
   grid-column: 1 / -1;
   /* Растягиваем на все колонки */
   display: grid;
@@ -271,41 +225,29 @@
   list-style: none;
 }
 
-.content-card-list-item-focus-disruptors {
+.content-card-list-item-focus {
   box-sizing: border-box;
 }
 
-.card-list-focus-disruptors {
+.card-list-focus {
   display: grid;
   gap: 10px;
 }
 
-.card-list-title-focus-disruptors {
-  color: var(--bg-color);
-  background-color: var(--title-bg);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
-
-  
-}
-
-.card-list-title-focus-disruptors,
-.card-list-text-focus-disruptors {
+.card-list-title-focus,
+.card-list-text-focus {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-
 /* Начало 3 секции  */
 
 .section-focus-tips {
   display: grid;
-  grid-template-columns: 315px 1fr;
-  color: #FFF1F7;
+  grid-template-columns: minmax(315px, 1fr) 2fr;
   max-width: 1024px;
-  gap: 20px;
+  gap: 10px;
   padding: 80px 20px;
 }
 
@@ -323,22 +265,20 @@
 }
 
 .title-card-focus-tips {
-  color: var(--bg-color);
-  background-color: var(--title-bg);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
   margin-bottom: 20px;
 }
 
 .card-list-title-focus-tips {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card-titl-decor {
   color: var(--bg-color);
   background-color: var(--title-bg);
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 /* Начало секции с картинками  */
@@ -346,14 +286,6 @@
 .section-picture {
   max-width: 1024px;
   padding: 0 20px 0;
-}
-
-.section-picture-title {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
-  color: var(--bg-color);
-  background-color: var(--title-bg);
 }
 
 .section-gallery {
@@ -424,6 +356,14 @@
   line-height: 83%;
 }
 
+@media (max-width: 1020px) {
+  .content-card-list-focus {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
 /* Стили для разрешения 768px и выше */
 @media (max-width: 768px) {
   .page {
@@ -462,33 +402,30 @@
     flex-shrink: 0;
   }
 
-  .section-concentration-problems {
+  .section-problems {
     max-width: 768px;
     padding: 60px 0;
   }
 
-  .section-content-concentration-problems {
+  .box-problems {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding: 0 20px;
   }
 
-  .section-focus-disruptors {
+  .section-focus {
     max-width: 768px;
   }
 
-  .content-title-focus-disruptors {
+  .content-title-focus {
     max-width: 236px;
-  }
-
-  .content-card-list-focus-disruptors {
-    grid-template-columns: 1fr;
   }
 
   .section-focus-tips {
     max-width: 768px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(236px, 1fr) 2fr;
+    gap: 20px;
   }
 
   .title-focus-tips {
@@ -506,7 +443,7 @@
 
   .footer {
     max-width: 768px;
-    height: 1024px;
+    min-height: 1024px;
   }
 
   .footer-title {
@@ -560,27 +497,27 @@
     margin: 53px 10px 0;
   }
 
-  .section-concentration-problems {
+  .section-problems {
     padding: 0;
   }
 
-  .section-content-concentration-problems {
+  .box-problems {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 40px 10px 30px 10px;
   }
 
-  .section-focus-disruptors {
+  .section-focus {
     padding: 0 10px 0;
   }
 
-  .content-title-focus-disruptors {
+  .content-title-focus {
     max-width: 355px;
     margin: 0;
   }
 
-  .content-card-list-focus-disruptors {
+  .content-card-list-focus {
     padding: 0;
   }
 

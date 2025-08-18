@@ -26,10 +26,10 @@
 
   --text-t: #FF0070;
 
+  --hover-color:#FF007066;
+  
 }
 
-/* Темная тема (Неон) */
-.theme-dark .header__theme-menu-button {
-  color: var(--title-bg);
-  /* Розовый текст */
+.theme-dark .rec{
+  display: flex;
 }
